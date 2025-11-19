@@ -1,0 +1,253 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.app{
+    height: 100vh;
+    display: flex;
+    background-color: #020230;
+    color: white;
+}
+.main{
+    width: 75%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #020230),
+                url("./images/bg.jpg") center;
+    display: flex;
+    flex-direction: column;
+}
+.top{
+    height: 50%;
+    position: relative;
+}
+.timer{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 5px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 100;
+    position: absolute;
+    bottom: 10px;
+    left: 80px;
+}
+.bottom{
+    height: 50%;
+}
+
+/* TRIVIA - QUESTION AND OPTIONS SECTION */
+/* .trivia{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+} */
+.question{
+    width: 80%;
+    background: linear-gradient(#100241, black);
+    border: 2px solid white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+.answers{
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.answer{
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(#0a0124, #22074d);
+    border: 1px solid white;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 300;
+    cursor: pointer;
+    margin: 0 10px 20px 10px;
+}
+.answer:hover, .answer.active{
+    background: mediumblue;
+}
+.answer.correct{
+    animation: correct 3s ease forwards;
+}
+@keyframes correct {
+    0%, 22%, 42%, 55%{
+        background: mediumblue;
+    }
+    20%, 40%, 50%, 60%{
+        background: linear-gradient(#0a0125, #22074d);
+    }
+    70%, 100%{
+        background: green;
+    }
+}
+
+.answer.incorrect{
+    animation: incorrect 3s ease forwards;
+}
+@keyframes incorrect {
+    0%, 22%, 42%, 55%{
+        background: mediumblue;
+    }
+    20%, 40%, 50%, 60%{
+        background: linear-gradient(#0a0125, #22074d);
+    }
+    70%, 100%{
+        background: crimson;
+    }
+}
+.letter{
+    float: left;
+    pointer-events: none;
+}
+/* END TRIVIA - QUESTION AND OPTIONS SECTION */
+
+/* PYRAMID - MONEY SECTION */
+.pyramid{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.moneyList{
+    list-style: none;
+    width: 100%;
+    padding: 20px;
+}
+.moneyListItem{
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    border-radius: 5px;
+}
+.moneyListItem:hover{
+    background-color: rgb(25, 66, 66);
+}
+.moneyListItem.active{
+    background-color: teal;
+}
+.moneyListItemNumber{
+    font-size: 18px;
+    font-weight: 100;
+    width: 30%;
+}
+.moneyListItemAmount{
+    font-size: 20px;
+    font-weight: 300;
+}
+/* END PYRAMID - MONEY SECTION */
+
+.endText{
+   position: relative;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin: auto; 
+}
+
+.start{
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: space-around;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+.startInput{
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+}
+.startInput:focus{
+    outline: none;
+}
+.startButton{
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* life line styling */
+.life-line{
+    position: absolute;
+    right: 30%;
+    top: 10px;
+    background-color: #000;
+    z-index: 90;
+}
+
+.gameCenter{
+    visibility: hidden;
+    transition: 1s;
+}
+/* Registration form */
+form#form{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    bottom: 50%;
+    text-align: center;
+    /* left: 30%;
+    right: 50%; */
+    margin: auto;
+}
+.formInput{
+    width: 300px;
+    padding: .7rem;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+.playGame{
+    padding: .6rem;
+    border-radius: 10px;
+    width: 150px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #8e5cdd;
+    color: white;
+}
+form h2{
+    color: white;
+    width: 100%;
+    position: absolute;
+    /* text-align: center; */
+    bottom: 200px;
+    /* left: 50px; */
+    /* right: 0; */
+    font-weight: bolder;
+    font-size: 3rem;
+    text-shadow: 1px 2px purple;
+    
+}
+form h2.sabiText{
+    font-size: 2rem;
+    text-align: center;
+    right: 9rem;
+    bottom: 7rem;
+}
