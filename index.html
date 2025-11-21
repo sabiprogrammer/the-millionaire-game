@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>It's Game Time!!!</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- <script defer src="./data.js"></script> -->
+    <script defer src="./helpers.js"></script>
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
     <form id="form">
-      <h2>The Sabi Game Show</h2>
-      <input type="text" class="formInput" placeholder="player name"/>
+      <h2>The Tech Xplore Millinaire Game Show</h2>
+      <input type="text" class="formInput" placeholder="player name" />
       <button type="submit" class="playGame">Let's Play!</button>
     </form>
 
     <div class="life-line gameCenter">
-      <img class="opts phoneFriend" src="./images/phone-friend.png" alt="phone friend">
-      <img class="opts fiftyFifty" src="./images/50-50.png" alt="50-50">
-      <img class="opts audience" src="./images/audience.png" alt="audience">
+      <img
+        class="opts phoneFriend"
+        src="./images/phone-friend.png"
+        alt="phone friend"
+      />
+      <img class="opts fiftyFifty" src="./images/50-50.png" alt="50-50" />
+      <img class="opts audience" src="./images/audience.png" alt="audience" />
     </div>
     <div class="app">
-      
-            <div class="main gameCenter">
-                  <div class="top">
-                    <div class="timer">
-                      
-                     </div>
-                  </div>
-                  <div class="bottom">
-                    <div class="trivia">
-                        <div class="question">What is the capital of Nigeria?</div>
-                        <div class="answers">
-                            <div class="answer"><span class="letter">A</span> Abuja</div>
-                            <div class="answer"><span class="letter">B</span> Lagos</div>
-                            <div class="answer"><span class="letter">C</span> Edo</div>
-                            <div class="answer"><span class="letter">D</span> Calabar</div>
-                        </div>
-                   </div>
-                  </div>
+      <div class="main gameCenter">
+        <div class="top">
+          <div class="timer"></div>
+        </div>
+        <div class="bottom">
+          <div class="trivia">
+            <div class="question">What is the capital of Nigeria?</div>
+            <div class="answers">
+              <div class="answer"><span class="letter">A</span> Abuja</div>
+              <div class="answer"><span class="letter">B</span> Lagos</div>
+              <div class="answer"><span class="letter">C</span> Edo</div>
+              <div class="answer"><span class="letter">D</span> Calabar</div>
             </div>
-            <div class="pyramid gameCenter">
-              <ul class="moneyList">
-                    
-              </ul>
-            </div>
+          </div>
+        </div>
       </div>
-    <script src="data.js"></script>
-    <script src="app.js"></script>
-</body>
+      <div class="pyramid gameCenter">
+        <ul class="moneyList"></ul>
+      </div>
+    </div>
+  </body>
 </html>
