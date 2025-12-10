@@ -134,6 +134,9 @@
     padding: 7px;
     border-radius: 5px;
 }
+.moneyListItem.gurantee{
+    background-color: rgb(25, 66, 66);
+}
 .moneyListItem:hover{
     background-color: rgb(25, 66, 66);
 }
@@ -198,8 +201,8 @@
 /* life line styling */
 .life-line{
     position: absolute;
-    right: 30%;
-    top: 10px;
+    right: 35%;
+    top: 100px;
     background-color: #000;
     z-index: 90;
 }

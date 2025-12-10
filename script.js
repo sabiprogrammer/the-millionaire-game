@@ -21,6 +21,8 @@ let startGameSound = new Audio("./sounds/entrance.mp3");
 let clicked = false;
 let questionIndex = 0;
 let currentQuestion;
+let earned;
+let wins = 0;
 
 function loadQuestion() {
   // get questions and options to the screen
@@ -57,6 +59,9 @@ function handleSelected(options) {
     option.addEventListener("click", (e) => {
       clicked = true;
       let selected = e.target;
+      console.log(selected);
+      
+      
       selected.classList.add("active");
       let correctAnswer = currentQuestion.correct;
       let userAnswer = selected.textContent.slice(2);
@@ -66,6 +71,7 @@ function handleSelected(options) {
         delay(3000, () => {
           new Audio("./sounds/correct.mp3").play();
           delay(500, () => selected.classList.add("correct"));
+          wins++;
         });
 
         delay(8000, () => {
@@ -94,14 +100,20 @@ function gameOver() {
   moneyPyramid.reverse();
 
   // rewrite logic to get earned amount
-  let earned = questionIndex > 0 ? moneyPyramid[questionIndex - 1].amount : "0";
-  appDOM.innerHTML = `<h1 class="endText"> Game Over! You earned ${earned} points</h1>`;
-  // appDOM.innerHTML = `<h1 class="endText"> Game Over! You earned &#8358;${earned}</h1>`;
+//   let earned = questionIndex > 0 ? moneyPyramid[questionIndex - 1].amount : "0";
+  earned = getAmountById(wins);
+//   appDOM.innerHTML = `<h1 class="endText"> Game Over! You earned ${earned} points</h1>`;
+  appDOM.innerHTML = `<h1 class="endText"> Game Over! Congratulations on your winnings</h1>`;
+//   appDOM.innerHTML = `<h1 class="endText"> Game Over! You earned ${earned}</h1>`;
 }
 
 const init = function () {
   gameSetup.clickToStartInitialSound();
   gameSetup.startGame();
   loadQuestion();
+
+  Lifeline.useAskAudience();
+  Lifeline.useFiftyFifty();
+  Lifeline.usePhoneFriend();
 };
 init();
